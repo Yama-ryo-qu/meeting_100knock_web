@@ -43,6 +43,21 @@ origin  https://github.com/Yama-ryo-qu/meeting\_100nock\_web (fetch)
 origin  https://github.com/Yama-ryo-qu/meeting\_100nock\_web (push)
 
 
+課題04.
+$ git log
+commit 87be73e7f87f089894d26337021426d39f5ddbaa (HEAD -> main, origin/main)
+Author: Yama-ryo-qu <y.ryouma69@gmail.com>
+Date:   Fri Oct 24 22:20:56 2025 +0900
+
+    Update README.md
+
+commit fc6bebee9ef74cd66d5b5bacba6a2b8359973f98
+Author: Yama-ryo-qu <y.ryouma69@gmail.com>
+Date:   Fri Oct 24 22:18:26 2025 +0900
+
+    課題途中経過20251024
+
+
 
 
 
