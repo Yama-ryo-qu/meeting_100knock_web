@@ -31,6 +31,15 @@ Date:   Tue Oct 7 11:03:17 2025 +0900
 
 **課題02.**
 
+    $ ssh-keygen -t ed25519
+
+    $ cat ~/.ssh/id_ed25519.pub
+
+これらのコマンドで鍵の作成➡公開鍵の中身確認して、GitHubの「SSH and GPG keys」設定画面に貼り付けて登録
+
+    
+
+
     $ ssh -T git@github.com
 
 Hi Yama-ryo-qu! You've successfully authenticated, but GitHub does not provide shell access.
