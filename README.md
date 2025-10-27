@@ -49,6 +49,7 @@ origin  https://github.com/Yama-ryo-qu/meeting\_100nock\_web (push)
 **課題04.**
 
     $ git log
+    
 commit 87be73e7f87f089894d26337021426d39f5ddbaa (HEAD -> main, origin/main)
 Author: Yama-ryo-qu <y.ryouma69@gmail.com>
 Date:   Fri Oct 24 22:20:56 2025 +0900
@@ -63,8 +64,11 @@ Date:   Fri Oct 24 22:18:26 2025 +0900
 
 
 **課題05.**
+
 YamaguchiRyoma@LAPTOP-2D820VD0 MINGW64 ~/Desktop/meeting_100nock_web (main)
+
         $ git status
+
 On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
@@ -74,7 +78,9 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 
 YamaguchiRyoma@LAPTOP-2D820VD0 MINGW64 ~/Desktop/meeting_100nock_web (main)
+
         $ git status
+
 On branch main
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
@@ -83,16 +89,21 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 
 YamaguchiRyoma@LAPTOP-2D820VD0 MINGW64 ~/Desktop/meeting_100nock_web (main)
+ 
         $ git add .gitignore
 
 YamaguchiRyoma@LAPTOP-2D820VD0 MINGW64 ~/Desktop/meeting_100nock_web (main)
+ 
         $ git commit -m "Add .gitignore"
+
 [main be9c272] Add .gitignore
  1 file changed, 54 insertions(+)
  create mode 100644 .gitignore
 
 YamaguchiRyoma@LAPTOP-2D820VD0 MINGW64 ~/Desktop/meeting_100nock_web (main)
+ 
         $ git status
+
 On branch main
 nothing to commit, working tree clean
 
