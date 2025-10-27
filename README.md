@@ -65,8 +65,6 @@ Date:   Fri Oct 24 22:18:26 2025 +0900
 
 **課題05.**
 
-YamaguchiRyoma@LAPTOP-2D820VD0 MINGW64 ~/Desktop/meeting_100nock_web (main)
-
         $ git status
 
 On branch main
@@ -77,7 +75,6 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 
-YamaguchiRyoma@LAPTOP-2D820VD0 MINGW64 ~/Desktop/meeting_100nock_web (main)
 
         $ git status
 
@@ -88,11 +85,9 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 
-YamaguchiRyoma@LAPTOP-2D820VD0 MINGW64 ~/Desktop/meeting_100nock_web (main)
  
         $ git add .gitignore
 
-YamaguchiRyoma@LAPTOP-2D820VD0 MINGW64 ~/Desktop/meeting_100nock_web (main)
  
         $ git commit -m "Add .gitignore"
 
@@ -100,7 +95,6 @@ YamaguchiRyoma@LAPTOP-2D820VD0 MINGW64 ~/Desktop/meeting_100nock_web (main)
  1 file changed, 54 insertions(+)
  create mode 100644 .gitignore
 
-YamaguchiRyoma@LAPTOP-2D820VD0 MINGW64 ~/Desktop/meeting_100nock_web (main)
  
         $ git status
 
