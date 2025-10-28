@@ -32,7 +32,7 @@ Date:   Tue Oct 7 11:03:17 2025 +0900
 **課題02.**
 <img width="675" height="450" alt="image" src="https://github.com/user-attachments/assets/6baa8e88-5ef3-43a9-9fb3-3cbb7950bacb" />
 
-https://clouddirect.jp.fujitsu.com/service/navi-words-ssh　より
+引用：　https://clouddirect.jp.fujitsu.com/service/navi-words-ssh
 
 
 
