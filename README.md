@@ -57,9 +57,9 @@ Hi Yama-ryo-qu! You've successfully authenticated, but GitHub does not provide s
 
     $ git remote -v
 
-origin  https://github.com/Yama-ryo-qu/meeting\_100nock\_web (fetch)
+origin  https://github.com/Yama-ryo-qu/meeting\_100knock\_web (fetch)
 
-origin  https://github.com/Yama-ryo-qu/meeting\_100nock\_web (push)
+origin  https://github.com/Yama-ryo-qu/meeting\_100knock\_web (push)
 
 
 **課題04.**
