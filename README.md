@@ -6,6 +6,32 @@
 
 
 **課題43**
+```
+const express = require('express');
+const app = express();
+const port = 3000;
+
+// GET /api/greet?name=xxx のリクエストを処理
+app.get('/api/greet', (req, res) => {
+    // クエリパラメータ 'name' を取得
+    const name = req.query.name;
+
+    if (name) {
+        res.json({ message: `Hello, ${name}!` });
+    } else {
+        res.json({ message: "Hello!" });
+    }
+});
+
+// サーバの起動
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
+```
+
+結果は以下
+
+<img width="1259" height="586" alt="スクリーンショット (170)" src="https://github.com/user-attachments/assets/c72dbf5d-d536-40e5-a5e8-4bf6ed83594b" />
 
 
 
