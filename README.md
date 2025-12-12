@@ -99,12 +99,21 @@ app.listen(PORT, () => {
 
 **1. 入力画面**
 ブラウザでフォームにデータを入力した状態。
-[ここに「入力画面」のスクリーンショットを貼り付けてください]
+
+<img width="1920" height="892" alt="スクリーンショット (179)" src="https://github.com/user-attachments/assets/3678cc32-1f22-499e-bce4-7a22fae176b4" />
+
+
 
 **2. 登録完了画面**
 登録ボタン押下後、登録されたIDとデータが表示された状態。
-[ここに「登録完了画面」のスクリーンショットを貼り付けてください]
+
+<img width="1920" height="886" alt="スクリーンショット (180)" src="https://github.com/user-attachments/assets/085a5900-0c7c-4c60-9a6e-9991be79179e" />
+
+
 
 **3. データベースの確認（コンソール等）**
 実際にデータが追加されていることの確認。
-[ここに「SELECT文での検索結果」などのスクリーンショットを貼り付けてください]
+
+<img width="1008" height="104" alt="スクリーンショット (181)" src="https://github.com/user-attachments/assets/ff339c58-b106-470b-9a11-606c025dad81" />
+
+
