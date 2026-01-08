@@ -30,6 +30,11 @@ HTTPは本来「ステートレス（状態を保持しない）」なプロト�
 3. **IDの自動送信**: 以降、ブラウザは同じドメインへのリクエストの際、自動的にクッキー（セッションID）をヘッダーに含めて送信。
 4. **ユーザーの識別**: サーバーは送られてきたセッションIDを元に、サーバー内のデータと照合し「誰がアクセスしているか」を判断。
 
+<img width="800" height="531" alt="image" src="https://github.com/user-attachments/assets/7a571bc6-d696-40eb-8bb6-ec6c7c0ae8a8" />
+
+https://developer.mozilla.org/ja/docs/Web/HTTP/Guides/Cookies　より
+
+
 ### 3. セキュリティ上の注意点
 
 * **セッションハイジャック**: セッションIDが盗まれると、第三者が本人になりすますことができてしまう。
@@ -43,6 +48,6 @@ HTTPは本来「ステートレス（状態を保持しない）」なプロト�
 ### 参考サイト
 
 1. **MDN Web Docs - HTTP クッキー** [https://developer.mozilla.org/ja/docs/Web/HTTP/Cookies](https://developer.mozilla.org/ja/docs/Web/HTTP/Cookies)  
-   (クッキーの基本的な仕組み、属性、セキュリティについての公式リファレンス)
+
 2. **国民のための情報セキュリティサイト（総務省） - クッキー（Cookie）の仕組み** [https://www.soumu.go.jp/main_sosiki/cybersecurity/kokumin/basic/basic_service_06.html](https://www.soumu.go.jp/main_sosiki/cybersecurity/kokumin/basic/basic_service_06.html)  
-   (初心者向けにクッキーの役割とプライバシーについて解説されている公的な資料)
+
