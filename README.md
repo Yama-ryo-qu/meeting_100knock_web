@@ -1,53 +1,81 @@
 # 【Web開発100本ノック】
 
 
-以下テーマ6の解答
+以下テーマ7の解答
 
-## 課題61. セッションとクッキーの仕組み
-
-
-HTTPは本来「ステートレス（状態を保持しない）」なプロトコルであるため、ログイン状態などを維持するためにクッキー（Cookie）とセッション（Session）という仕組みを組み合わせて利用する。
-
----
-
-### 1. クッキーとセッションの比較
-
-| 項目 | クッキー (Cookie) | セッション (Session) |
-| :--- | :--- | :--- |
-| **保存場所** | クライアント側（ブラウザ） | サーバー側 |
-| **データの実体** | ブラウザ内のテキストファイル | サーバーのメモリやデータベース |
-| **主な用途** | セッションIDの保持、設定保存 | ログイン状態、ユーザー情報の保持 |
-| **安全性** | ユーザーが中身を見れるため低い | サーバー管理のため比較的高い |
-
----
-
-### 2. Webサービスにおける仕組みと役割
-
-ログイン機能を例とした、一般的な動作フローは以下の通り。
-
-1. **セッションの生成**: ユーザーがログインに成功すると、サーバー側で一意の「セッションID」を生成し、サーバー内にデータを保存。
-2. **IDの付与（Set-Cookie）**: サーバーはレスポンスのヘッダーを使用して、ブラウザにセッションIDを「クッキー」として保存するよう指示。
-3. **IDの自動送信**: 以降、ブラウザは同じドメインへのリクエストの際、自動的にクッキー（セッションID）をヘッダーに含めて送信。
-4. **ユーザーの識別**: サーバーは送られてきたセッションIDを元に、サーバー内のデータと照合し「誰がアクセスしているか」を判断。
-
-<img width="800" height="531" alt="image" src="https://github.com/user-attachments/assets/7a571bc6-d696-40eb-8bb6-ec6c7c0ae8a8" />
-
-https://developer.mozilla.org/ja/docs/Web/HTTP/Guides/Cookies　より
+## 課題73：useStateによる状態管理
+問題：useStateフックを利用し，ボタン押下で値が増減するカウンターコンポーネントを作成せよ．
 
 
-### 3. セキュリティ上の注意点
+本課題では、React の useState フックを利用し、  ボタン操作によって値が増減するカウンターコンポーネントを作成する。  
+状態が変化すると画面が自動的に再描画されることを確認する。
 
-* **セッションハイジャック**: セッションIDが盗まれると、第三者が本人になりすますことができてしまう。
-* **対策**: 
-    * **HTTPS化**: 通信を暗号化し、IDの盗聴を防ぐ。
-    * **HttpOnly属性**: JavaScriptからクッキーを読み取れないようにし、XSS攻撃を防ぐ。
-    * **Secure属性**: HTTPS通信時のみクッキーを送信するように制限する。
 
----
+## カウンターコンポーネントのソースコード
 
-### 参考サイト
+```jsx
+import { useState } from "react";
 
-1. **MDN Web Docs - HTTP クッキー** [https://developer.mozilla.org/ja/docs/Web/HTTP/Cookies](https://developer.mozilla.org/ja/docs/Web/HTTP/Cookies)  
+function Counter() {
+  const [count, setCount] = useState(0);
 
-2. **国民のための情報セキュリティサイト（総務省） - クッキー（Cookie）の仕組み** [https://www.soumu.go.jp/main_sosiki/cybersecurity/kokumin/basic/basic_service_06.html](https://www.soumu.go.jp/main_sosiki/cybersecurity/kokumin/basic/basic_service_06.html)  
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>+1</button>
+      <button onClick={() => setCount(count - 1)}>-1</button>
+    </div>
+  );
+}
+
+export default Counter;
+
+```
+
+
+### useStateの説明
+
+```jsx
+const [count, setCount] = useState(0);
+```
+
+count は現在の状態を保持する変数であり、
+setCount はその状態を更新するための関数である。
+初期値として 0 を設定している。
+
+
+
+### 状態更新処理の説明
+
+```jsx
+setCount(count + 1);
+```
+prev は更新前の状態の値を表し、
+前の値を基にして安全に状態を更新できる。
+
+
+
+## Appに組み込む（表示確認用）
+```js
+import Counter from "./Counter";
+
+function App() {
+  return (
+    <div>
+      <Counter />
+    </div>
+
+  );
+}
+
+export default App;
+```
+
+## 実装結果
+<img width="561" height="317" alt="スクリーンショット (223)" src="https://github.com/user-attachments/assets/d1a0b01c-e5fc-4cd6-871e-51d50637acf3" />
+
+
+<img width="561" height="296" alt="スクリーンショット (224)" src="https://github.com/user-attachments/assets/acb64daf-66a6-4205-a97f-b6922253b1cf" />
+
+
 
