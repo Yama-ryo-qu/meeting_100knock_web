@@ -100,3 +100,55 @@ export default App;
 
 
 
+
+
+# 課題79：Reactアプリの公開（GitHub Pages版）
+作成したReactアプリを **GitHub Pages** で公開し、公開URLで表示できることを確認する。
+
+---
+
+## 手順
+
+### 1. GitHubにリポジトリを作成してpushする
+（GitHub上で空のリポジトリを作ってから、プロジェクト直下で実行）
+
+```bash
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/<ユーザー名>/<リポジトリ名>.git
+git push -u origin main
+```
+
+## 2. gh-pages を入れる
+```bash
+npm install --save-dev gh-pages
+```
+
+## 3. package.json を設定する
+(1) homepage を追加（最上部付近に入れてOK）
+```json
+"homepage": "https://<ユーザー名>.github.io/<リポジトリ名>"
+```
+
+(2) scripts を追加（既存scriptsに追記）
+```json
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
+```
+
+## 4. 公開（デプロイ）する
+```bash
+npm run deploy
+```
+
+## 5. GitHub側のPages設定を確認
+GitHubのリポジトリ画面 → Settings → Pages
+
+Branch が gh-pages になっていることを確認（なっていなければ gh-pages を選択して保存）
+
+## 実行結果
+下記のリンクにアクセスしてみてください。おそらく動作するはずです。
+⬇⬇
+"https://yama-ryo-qu.github.io/meeting_100knock_web_79"
