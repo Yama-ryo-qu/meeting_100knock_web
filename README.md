@@ -73,7 +73,7 @@ export default App;
 <Counter />の部分でCounter.jsxのCounter()を呼び出している。
 
 ## 処理の流れ
-1．index.js が App を呼ぶ
+1．index.js(Reactアプリが最初に実行されるファイル) が App を呼ぶ
 
 2．App.js が <Counter /> を配置
 
