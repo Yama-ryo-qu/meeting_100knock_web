@@ -70,6 +70,27 @@ function App() {
 
 export default App;
 ```
+<Counter />の部分でCounter.jsxのCounter()を呼び出している。
+
+## 処理の流れ
+1．index.js が App を呼ぶ
+
+2．App.js が <Counter /> を配置
+
+3．Counter() が実行される
+
+4．useState(0) により count=0
+
+5．JSX が画面に表示される
+
+6．ボタンを押す
+
+7．setCount が呼ばれる
+
+8．Reactが Counter を再実行
+
+9．新しい count が画面に反映される
+
 
 ## 実装結果
 <img width="561" height="317" alt="スクリーンショット (223)" src="https://github.com/user-attachments/assets/d1a0b01c-e5fc-4cd6-871e-51d50637acf3" />
