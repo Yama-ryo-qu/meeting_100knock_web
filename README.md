@@ -356,7 +356,7 @@ $next.addEventListener("click", () => {
 
 #### 役割
 
-- 「前へ」→ `currentPage \- 1` を取得
+- 「前へ」→ `currentPage - 1` を取得
 
 -「次へ」→ `currentPage + 1` を取得
 
