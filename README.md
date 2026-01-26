@@ -331,28 +331,57 @@ async function fetchPage(page) {
 
 - fetchで取得
 
-- HTTPエラーチェック :`res.ok` が `false` なら `throw` して `catch` へ
+- HTTPエラーチェック :`res.ok` が false` なら `throw` して `catch` へ
 
-総件数から全ページ数を計算
+- 総件数から全ページ数を計算 : `x-total-count` ヘッダーに総件数が入っている, `Math.ceil(totalCount / LIMIT)` でページ数
 
-x-total-count ヘッダーに総件数が入っている
+- JSONに変換して表示 : `res.json()` → `renderPosts()`
 
-Math.ceil(totalCount / LIMIT) でページ数
+- 状態更新
 
-JSONに変換して表示
+---
 
-res.json() → renderPosts()
+### イベント処理（ボタンを押したときの動作）
 
-状態更新
+```Javascript
+$prev.addEventListener("click", () => {
+  if (currentPage > 1) fetchPage(currentPage - 1);
+});
 
-currentPage = page
 
-メッセージ消す
+$next.addEventListener("click", () => {
+  if (totalPages === null || currentPage < totalPages) fetchPage(currentPage + 1);
+});
+```
 
-ボタン状態更新
+#### 役割
 
-async / await の意味
+- 「前へ」→ `currentPage \- 1` を取得
 
-fetch() は非同期（時間がかかる）ので await で待つ
+-「次へ」→ `currentPage + 1` を取得
 
-関数を async function にすると await が使える
+#### if文の意味
+
+- 1ページ目で「前へ」を押してもページ0にならないようにする
+
+- 最終ページで「次へ」を押しても超えないようにする
+
+---
+
+### 初回表示（ページ1を表示）
+
+```Javascript
+fetchPage(currentPage);
+```
+
+- これがないと、ページを開いた瞬間に何も表示されない
+
+- 最初に1ページ目を取得して表示するために必要
+
+
+---
+## 動作確認
+<img width="1901" height="1007" alt="スクリーンショット (235)" src="https://github.com/user-attachments/assets/58cec283-8371-47cf-aa63-f8fc94fc11cd" />
+
+<img width="1920" height="992" alt="スクリーンショット (236)" src="https://github.com/user-attachments/assets/92059a15-4e37-4deb-9415-bfe65073bece" />
+
