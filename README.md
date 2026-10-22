@@ -1,123 +1,69 @@
-**【Web開発100本ノック】**
+# 課題08：過去のコミット履歴の確認と差分の確認
 
+## 1. 課題の目的
 
+Gitのコマンドを使用して、過去のコミット履歴とファイルの変更内容を確認する。
 
-以下テーマ0の解答
+今回は以下の2つのコマンドを使用する。
 
+- `git log --oneline`：コミット履歴を簡潔に表示する
+- `git diff`：ファイルの変更前後の差分を確認する
 
+## 2. コミット履歴の確認
 
+### 実行コマンド
 
-**課題00.**
+```bash
+git log --oneline
+```
 
-    $ git --version
+### 実行結果
 
-git version 2.51.0.windows.2
+<img width="440" height="40" alt="image" src="https://github.com/user-attachments/assets/07a5d457-3980-45d7-bc9d-0cab55189fb0" />
 
 
+### 結果の説明
 
-**課題01.**
+- `482ab88`：コミットを識別するIDの短縮形
+- `HEAD`：現在参照しているコミットを示す
+- `main`：現在作業しているブランチ名
+- `Initial commit`：最初のコミットに付けたメッセージ
 
-commit d00d7a5a67e202a811e218318154878cf6e57009
+この結果から、`main` ブランチに初回コミットが正常に記録されていることを確認できた。
 
-Author: Yama-ryo-qu
+## 3. ファイルの差分の確認
 
-Date:   Tue Oct 7 11:03:17 2025 +0900
+### 実行手順
 
+README.mdに新しい文章を追加し、変更前後の差分を確認する。
 
+### 実行コマンド
 
-    Initial commit
+```bash
+git diff
+```
 
+### 実行結果
 
+<img width="439" height="114" alt="image" src="https://github.com/user-attachments/assets/06125fc6-6616-4f05-a6b7-56ea114f4d1d" />
 
-**課題02.**
 
-<img width="675" height="450" alt="image" src="https://github.com/user-attachments/assets/6baa8e88-5ef3-43a9-9fb3-3cbb7950bacb" />
+### 結果の説明
 
-引用：　https://clouddirect.jp.fujitsu.com/service/navi-words-ssh
+`git diff` は、作業ディレクトリにあるファイルの変更内容を確認するコマンドである。
 
+差分表示では、主に以下の記号が使用される。
 
+- `+`：追加された行
+- `-`：削除された行
+- `@@`：変更箇所の行番号などを示す
 
+これらの記号から、ファイルのどの部分が変更されたかを確認できる。
 
-    $ ssh-keygen -t ed25519
+## 4. まとめ
 
-    $ cat ~/.ssh/id_ed25519.pub
+今回の課題では、Gitの履歴管理機能と差分確認機能について学んだ。
 
-これらのコマンドで鍵の作成➡公開鍵の中身確認して、GitHubの「SSH and GPG keys」設定画面に貼り付けて登録
+`git log --oneline` によって、過去のコミットをIDとメッセージから確認できた。また、`git diff` を使うことで、ファイルの変更箇所を確認できる。
 
-    
-
-
-    $ ssh -T git@github.com
-
-Hi Yama-ryo-qu! You've successfully authenticated, but GitHub does not provide shell access.
-
-
-
-**課題03.**
-
-    $ git remote -v
-
-origin  https://github.com/Yama-ryo-qu/meeting\_100knock\_web (fetch)
-
-origin  https://github.com/Yama-ryo-qu/meeting\_100knock\_web (push)
-
-
-**課題04.**
-
-    $ git log
-    
-commit 87be73e7f87f089894d26337021426d39f5ddbaa (HEAD -> main, origin/main)
-Author: Yama-ryo-qu
-Date:   Fri Oct 24 22:20:56 2025 +0900
-
-Update README.md
-
-commit fc6bebee9ef74cd66d5b5bacba6a2b8359973f98
-Author: Yama-ryo-qu
-Date:   Fri Oct 24 22:18:26 2025 +0900
-
-課題途中経過20251024
-
-
-**課題05.**
-
-        $ git status
-
-On branch main
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        .gitignore
-        package-lock.json
-
-nothing added to commit but untracked files present (use "git add" to track)
-
-
-        $ git status
-
-On branch main
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        .gitignore
-
-nothing added to commit but untracked files present (use "git add" to track)
-
- 
-        $ git add .gitignore
-
- 
-        $ git commit -m "Add .gitignore"
-
-[main be9c272] Add .gitignore
- 1 file changed, 54 insertions(+)
- create mode 100644 .gitignore
-
- 
-        $ git status
-
-On branch main
-nothing to commit, working tree clean
-
-
-
-
-
+これらのコマンドを活用することで、プログラムの変更履歴を把握し、変更内容を管理しやすくなる。
