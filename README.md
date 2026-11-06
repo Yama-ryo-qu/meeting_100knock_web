@@ -24,13 +24,6 @@ git clone https://github.com/Yama-ryo-qu/web_knock_test.git
 
 これにより、リポジトリ内のファイルやコミット履歴を取得できる。
 
-続いて、作業ディレクトリを移動する。
-
-```bash
-cd web_knock_test
-```
-
-`cd` はディレクトリを移動するためのコマンドである。
 
 ### ② HTMLファイルの配置
 
@@ -157,10 +150,8 @@ GitHub上のリポジトリで、以下の手順によりGitHub Pagesを有効�
 ## 4. 実行結果
 
 GitHub Pagesを利用して、作成したWebページをインターネット上に公開できた。
+<img width="956" height="462" alt="image" src="https://github.com/user-attachments/assets/448caab3-0ecd-4669-8ca9-d1ef93192bd4" />
 
-### GitHubリポジトリ
-
-https://github.com/Yama-ryo-qu/web_knock_test
 
 ### 公開URL
 
