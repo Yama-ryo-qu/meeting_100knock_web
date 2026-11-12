@@ -1,96 +1,137 @@
-**【Web開発100本ノック】**
+# 課題37：動的なリスト表示
+
+## 1. 実装内容
+
+JavaScriptの配列に格納した果物の名前を、`forEach()` を用いて1つずつ取り出し、HTML上にリスト形式で動的に表示するプログラムを作成した。
+
+リストの各要素は `document.createElement()` を使用して生成し、`appendChild()` によってHTMLに追加する。
+
+## 2. HTMLファイル（index.html）
+
+HTML側では、リストの表示先となる `<ul>` 要素を用意する。
+
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課題37：動的なリスト表示</title>
+</head>
+<body>
+    <h1>果物リスト</h1>
+
+    <!-- JavaScriptでリストを追加する場所 -->
+    <ul id="fruit-list"></ul>
+
+    <!-- JavaScriptファイルを読み込む -->
+    <script src="main.js"></script>
+</body>
+</html>
+```
+
+## 3. JavaScriptファイル（main.js）
+
+```javascript
+// 果物の名前を配列に格納する
+const fruits = ["りんご", "バナナ", "みかん", "ぶどう", "いちご"];
+
+// HTML内のリスト要素を取得する
+const fruitList = document.getElementById("fruit-list");
+
+// 配列内の果物を1つずつ処理する
+fruits.forEach(function(fruit) {
+
+    // 新しい<li>要素を生成する
+    const listItem = document.createElement("li");
+
+    // <li>要素に果物の名前を設定する
+    listItem.textContent = fruit;
+
+    // <ul>要素の中に<li>要素を追加する
+    fruitList.appendChild(listItem);
+
+});
+```
+
+## 4. 処理の説明
+
+### ① 配列の定義
+
+```javascript
+const fruits = ["りんご", "バナナ", "みかん", "ぶどう", "いちご"];
+```
+
+5種類の果物を配列 `fruits` に格納する。
+
+### ② HTML要素の取得
+
+```javascript
+const fruitList = document.getElementById("fruit-list");
+```
+
+`document.getElementById()` を使用し、HTML内の `id="fruit-list"` が指定された `<ul>` 要素を取得する。
+
+### ③ 配列の繰り返し処理
+
+```javascript
+fruits.forEach(function(fruit) {
+    // 処理
+});
+```
+
+`forEach()` は、配列の各要素に対して順番に処理を実行するメソッドである。
+
+今回の場合、「りんご」「バナナ」「みかん」「ぶどう」「いちご」が順番に変数 `fruit` に代入される。
+
+### ④ HTML要素の生成
+
+```javascript
+const listItem = document.createElement("li");
+```
+
+`document.createElement()` を用いて、新しい `<li>` 要素を生成する。
+
+`<li>` はリストの各項目を表すHTML要素である。
+
+### ⑤ テキストの設定
+
+```javascript
+listItem.textContent = fruit;
+```
+
+生成した `<li>` 要素に、現在処理している果物の名前を設定する。
+
+### ⑥ HTMLへの追加
+
+```javascript
+fruitList.appendChild(listItem);
+```
+
+`appendChild()` を使って、生成した `<li>` 要素を `<ul>` 要素の末尾に追加する。
+
+これらの処理をすべての果物に対して繰り返すことで、リストが動的に生成される。
+
+## 5. 実行結果
+
+ブラウザで `index.html` を開くと、次の内容が箇条書きで表示される。
+
+**果物リスト**
+
+- りんご
+- バナナ
+- みかん
+- ぶどう
+- いちご
+
+### 表示結果のスクリーンショット
 
 
-
-以下テーマ3の解答
-
-
-**課題31**
-
-**1. 変数**
-
-        let userName = "山田 太郎";
-        const userAge = 30;
-        var isStudent = false;
-   
-        console.log("--- 変数 ---");
-        console.log("名前:", userName);
-        console.log("年齢:", userAge);
-        console.log("学生:", isStudent);
-
-結果
-
-<img width="1548" height="128" alt="スクリーンショット (162)" src="https://github.com/user-attachments/assets/79f443bd-de34-45ce-9cbe-ad02a816fcd1" />
-
-・let➡再代入〇、再宣言✕
-
-・const➡再代入✕、再宣言✕　（つまり定数）
-
-・var➡再代入〇、再宣言〇　（※古い変数宣言方法、非推奨）
-
-以下例（https://techplay.jp/column/1619より）
-
-        // 再宣言
-        var hoge1 = 1;
-        var hoge1 = 2;
-        console.log(hoge1);  // 2
- 
-        let hoge2 = 1;
-        let hoge2 = 2; // ここでエラーが発生
- 
-        const hoge3 = 1;
-        const hoge3 = 2; // ここでエラーが発生
-
-        // 再代入
-        var hoge1 = 1;
-        hoge1 = 2;
-        console.log(hoge1);  // 2
-
-        let hoge2 = 1;
-        hoge2 = 2;
-        console.log(hoge2);  // 2
- 
-        const hoge3 = 1;
-        hoge3 = 2; // ここでエラーが発生
-
-**2. 配列**
-
-        const colors = ["Red", "Green", "Blue"];
-
-        console.log("--- 配列 ---");
-        console.log("色リスト:", colors);
-        console.log("3番目の色 (インデックス2):", colors[2]);
-
-結果
-
-<img width="963" height="100" alt="スクリーンショット (162)" src="https://github.com/user-attachments/assets/bb3e3870-c5e8-4144-ae15-a80f830921e5" />
-
-・配列内の要素の同時出力
-
-・配列のインデックス使って、特定の要素を出力
-
-**3. オブジェクト**
-   
-        const userProfile = {
-          id: "A001",
-          name: "佐藤 花子",
-          occupation: "エンジニア",
-          hobbies: ["読書", "サイクリング"]
-        };
-
-        console.log("--- オブジェクト ---");
-        console.log("ユーザープロフィール:", userProfile);
-        console.log("ユーザー名:", userProfile.name);
-        console.log("職業:", userProfile["occupation"]);
+<img width="959" height="485" alt="image" src="https://github.com/user-attachments/assets/bf001cd0-9615-453a-b7b7-73f2fc85743d" />
 
 
- 結果
+## 6. まとめ
 
-<img width="1259" height="136" alt="スクリーンショット (162)" src="https://github.com/user-attachments/assets/da78ba9e-9622-4c13-933e-737983135fb0" />
+今回の課題では、JavaScriptの配列と `forEach()` を使用して、複数のデータを順番に処理する方法を学んだ。
 
-・オブジェクトuserProfileの全プロパティをコンソールに出力
-
-・ドット記法（.）を使って、キーnameの値（"佐藤 花子"）を出力
-
-・ブラケット記法（[]）を使って、キーoccupationの値（"エンジニア"）を出力
- 
+また、`document.createElement()` によってHTML要素を生成し、`appendChild()` を使ってWebページに追加することで、HTMLファイルに各項目を直接記述しなくても、JavaScriptから動的にリストを作成できることを確認した。
